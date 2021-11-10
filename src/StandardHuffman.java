@@ -20,9 +20,6 @@ import java.util.*;
 class CustomComparatorValue implements Comparator<Node> {
     @Override
     public int compare(Node o1, Node o2) {
-        if (o2.getProbability().equals(o1.getProbability())){
-            return o1.getValue().compareTo(o2.getValue());
-        }
         return o2.getProbability().compareTo(o1.getProbability());
     }
 }
