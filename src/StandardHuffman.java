@@ -15,12 +15,18 @@ import java.util.*;
  * Department: CS
  * */
 
+//Class made to work with collection sorts where it sorts based on probability.
+//If two chars have the same probability it sorts based on ascii.
 class CustomComparatorValue implements Comparator<Node> {
     @Override
     public int compare(Node o1, Node o2) {
+        if (o2.getProbability().equals(o1.getProbability())){
+            return o1.getValue().compareTo(o2.getValue());
+        }
         return o2.getProbability().compareTo(o1.getProbability());
     }
 }
+
 class Node{
     public String value;
     public Double probability;
@@ -219,6 +225,7 @@ public class StandardHuffman {
                 "NSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRHHHHH" +
                 "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD" +
                 "DDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCUUUUUUUUUUUUUUUUUUUUUUUUUUU";
+
 
         standardHuffman.compress(data);
 
