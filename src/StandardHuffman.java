@@ -16,7 +16,6 @@ import java.util.*;
  * */
 
 //Class made to work with collection sorts where it sorts based on probability.
-//If two chars have the same probability it sorts based on ascii.
 class CustomComparatorValue implements Comparator<Node> {
     @Override
     public int compare(Node o1, Node o2) {
